@@ -78,6 +78,4 @@ To run the project locally:
 
 Without these assets and database records, the player interface will load but no tracks will be available.
 
-## 📜 License
 
-This project is available for learning, personal use, and further customization.
