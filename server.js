@@ -1,4 +1,4 @@
-// server.js
+
 const express = require('express');
 const mysql = require('mysql2/promise');
 const path = require('path');
@@ -7,12 +7,11 @@ const cors = require('cors');
 const app = express();
 const port = 3000;
 
-// فعال‌سازی دسترسی فرانت‌اند و پارسر دیتای JSON
 app.use(cors());
 app.use(express.json()); 
 app.use(express.urlencoded({ extended: true }));
 
-// تنظیمات اتصال به دیتابیس
+
 const dbConfig = {
     host: 'localhost',
     user: 'root',
@@ -20,7 +19,7 @@ const dbConfig = {
     database: 'music_player'
 };
 
-// serve main.html directly from Node
+
 app.use(express.static(path.join(__dirname, '.')));
 
 app.use('/covers', (req, res, next) => {
@@ -33,12 +32,12 @@ app.use('/covers', express.static(path.join(__dirname,'covers')));
 
 
 
-// مسیر اصلی وب‌سایت
+
 app.get('/', (req, res) => {
     res.send('Music Player Server is Running!');
 });
 
-// دریافت لیست تمام آهنگ‌ها از دیتابیس
+
 app.get('/api/songs', async (req, res) => {
     let connection;
     try {
@@ -53,7 +52,7 @@ app.get('/api/songs', async (req, res) => {
     }
 });
 
-// بروزرسانی وضعیت علاقه‌مندی (Favorite)
+
 app.patch('/api/songs/:id/favorite', async (req, res) => {
     let connection;
     try {
@@ -84,7 +83,7 @@ app.delete('/api/songs/:id', async (req, res) => {
   }
 });
 
-// static files
+
 app.use('/songs', (req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Cross-Origin-Resource-Policy', 'cross-origin');
@@ -92,8 +91,8 @@ app.use('/songs', (req, res, next) => {
 });
 app.use('/songs', express.static(path.join(__dirname, 'songs')));
 
-// serve main.html
-app.use(express.static(path.join(__dirname, '.')));  // ← add this
+
+app.use(express.static(path.join(__dirname, '.')));  
 
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
