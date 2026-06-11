@@ -2,60 +2,78 @@
 
 A modern full-stack music player built with **HTML, CSS, JavaScript, Node.js, Express, and MySQL**.
 
-The project features a polished glassmorphism-inspired interface, animated playback visuals, dynamic artwork backgrounds, favorites management, song search, queue handling, and local audio streaming.
+Featuring a sleek glassmorphism-inspired interface, animated playback effects, dynamic artwork backgrounds, local audio streaming, favorites management, and a responsive listening experience.
 
 ## ✨ Features
 
-* Beautiful animated music player UI
-* Dynamic gradient backgrounds based on track colors
-* Vinyl record playback animation
-* Real-time waveform visualizer
-* Mini player with playback controls
-* Search songs instantly
+* Modern glassmorphism UI
+* Dynamic artwork-based color themes
+* Animated vinyl record playback
+* Waveform visualizer
+* Mini player controls
+* Song search and filtering
 * Favorites system
-* Recently added songs section
+* Recently added tracks
 * Queue management
 * Shuffle and repeat modes
-* MySQL database integration
-* Local audio and cover image serving through Express
+* MySQL-powered music library
+* Local audio and cover image serving
 
 ## 🛠️ Tech Stack
 
 * Frontend: HTML, CSS, Vanilla JavaScript
-* Backend: Node.js, Express
+* Backend: Node.js + Express
 * Database: MySQL
-* Media Storage: Local file system
+* Media Storage: Local File System
 
 ## 📁 Project Structure
 
 ```text
-/
+music-player/
 ├── main.html
 ├── server.js
+├── styles.css
+├── script.js
 ├── songs/
 ├── covers/
-└── database
+├── .env
+└── README.md
 ```
 
-## 🚀 Getting Started
+## 🚀 Installation
 
-### 1. Install Dependencies
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/Amirbmn/Music-Player.git
+cd music-player
+```
+
+### 2. Install dependencies
 
 ```bash
 npm install
 ```
 
-### 2. Configure MySQL
+### 3. Configure MySQL
 
-Create a MySQL database and update the connection settings inside `server.js`.
+Create a MySQL database and update your environment variables:
 
-### 3. Start the Server
+```env
+DB_HOST=localhost
+DB_USER=root
+DB_PASSWORD=your_password
+DB_NAME=music_player
+PORT=3000
+```
+
+### 4. Start the server
 
 ```bash
 node server.js
 ```
 
-The application will be available at:
+Open:
 
 ```text
 http://localhost:3000
@@ -63,7 +81,7 @@ http://localhost:3000
 
 ## ⚠️ Note for Cloners (Media Setup)
 
-To keep this repository lightweight, physical audio files and high-resolution cover artwork are **not included**.
+To keep this repository lightweight, audio files and cover artwork are **not included**.
 
 To run the project locally:
 
@@ -74,8 +92,8 @@ To run the project locally:
 
    * Correct audio file paths
    * Correct cover image paths
-   * Your preferred artwork color palette (`color1`, `color2`, `color3`)
+   * Your preferred artwork colors (`color1`, `color2`, `color3`)
 
-Without these assets and database records, the player interface will load but no tracks will be available.
+Without these assets and database records, the interface will load but no tracks will be available.
 
 
