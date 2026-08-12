@@ -15,7 +15,7 @@ app.use(express.urlencoded({ extended: true }));
 const dbConfig = {
     host: 'localhost',
     user: 'root',
-    password: 'amirb1383',
+    password: 'your password',
     database: 'music_player'
 };
 
